@@ -1,0 +1,175 @@
+/*
+    @IMPORTS
+    @VARIABLES
+    @HTML-BODY-ROOT
+    @MAIN-HEADER AND MAIN-FOOTER
+    @MAIN-CONTENT
+    @GRID AND ROW-DIVIDERS
+    @BUTTONS
+    @TERMINAL
+*/
+
+/*@IMPORTS*/
+@import url('./reset.css');
+@import url('./nodes.css');
+@import url('./bee.css');
+
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/*VARIABLES*/
+:root {
+    --headerFooterBGC: #ededed;
+}
+
+/*@HTML-BODY-ROOT*/
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#root {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "content"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+/*@MAIN-HEADER AND MAIN-FOOTER*/
+#main-header {
+    grid-area: header;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    background-color: var(--headerFooterBGC);
+    border-bottom: solid 1px #000000;
+}
+
+#main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+    
+    line-height: 2.5em;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+
+    background-color: var(--headerFooterBGC);
+    border-top: solid 1px #000000;
+}
+
+/*@MAIN-CONTENT*/
+#main-content {
+    grid-area: content;
+    background-color: #bbbbbb;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+}
+
+#main-content-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+}
+
+/*@GRID AND ROW-DIVIDERS*/
+#grid {
+    background-color: #ffffff;
+    border: solid 1px #444444;
+}
+
+#grid.grid {
+    border-bottom: none;
+    border-right: none;
+    border-left: solid 1px #444444;
+    border-top: solid 1px #444444;
+}
+
+.row-divider {
+    font-size: 0;
+}
+
+/*@BUTTONS*/
+.title {
+    text-align: center;
+    line-height: 2em;
+}
+
+.header-row-divider {
+    border-top: solid 1px #000000;
+}
+
+.header-row-option {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 0; /*To remove auto-padding on buttons*/
+}
+
+/*Label and Select*/
+label {
+    display: inline-block;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin: .5rem;
+    padding-right: 1.6rem;
+}
+
+select {
+    display: inline-block;
+    width: 14rem;
+    text-align: center;
+    height: 2.4rem;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+}
+
+input[type=range] {
+    margin: 0;
+}
+
+.header-btn {
+    padding: .5rem;
+    width: 16rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    border-radius: .8em;
+    transition: background-color .2s;
+}
+
+.header-btn:hover {
+    cursor: pointer;
+    font-style: italic;
+    background-color: #cccccc;
+}
+
+/*@TERMINAL*/
+#terminal {
+    font-weight: bold;
+    line-height: 2em;
+    text-align: center;
+}
+
+#terminal.dormant, #terminal.animating {
+    color: #000000;
+}
+
+#terminal.failed {
+    color: #a70000;
+}
+
+#terminal.succeeded {
+    color: #01920d;
+}

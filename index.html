@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pathfinding Visualizer</title>
+        <link rel="stylesheet" href="./dist/css/index.css">
+        <script src="./dist/js/index.js" type="module" defer></script>
+    </head>
+    <body>
+        <div id="root">
+            <!--MAIN HEADER -->
+            <header id="main-header">
+                <h2 class="title">Pathfinding Visualizer</h2>
+                
+                <!--First Row-->
+                <section class="header-row-divider">
+                    <div class="header-row-option">
+                        <label for="edit-mode-dropdown">Draw Mode</label>
+                        <select
+                            id="edit-mode-dropdown"
+                            name="edit-mode-dropdown"
+                            >
+                                <option value= "Walls" >Draw Walls</option>
+                                <option value= "Weights" >Draw Weights</option>
+                        </select>
+                    </div><!--
+                    --><div class="header-row-option">
+                        <button type="button" id="toggle-grid-btn" class="header-btn" >
+                            Toggle Grid
+                        </button>
+                    </div><!--
+                    --><div class="header-row-option">
+                        <button type="button" id="clear-walls-btn" class="header-btn" >
+                            Clear Walls
+                        </button>
+                    </div><!--
+                    --><div class="header-row-option">
+                        <button type="button" id="clear-weights-btn" class="header-btn" >
+                            Clear Weights
+                        </button>
+                    </div><!--
+                    --><div class="header-row-option">
+                        <button type="button" id="clear-nodes-btn" class="header-btn" >
+                            Clear Nodes
+                        </button>
+                    </div><!--
+                    --><div class="header-row-option">
+                        <button type="button" id="animate-path-btn" class="header-btn" >
+                            Animate Path
+                        </button>
+                    </div>
+                </section>
+
+                <!--Second Row-->
+                <section class="header-row-divider">
+                    <div class="header-row-option">
+                        <label for="pathfinder-dropdown">Pathfinder</label>
+                        <select
+                            id="pathfinder-dropdown"
+                            name="pathfinder-dropdown"
+                            >
+                                <option value= "0" >Dijkstra</option>
+                                <option value= "1" >AStar</option>
+                                <option value= "2" >BFS</option>
+                                <option value= "3" >DFS</option>
+                                <option value= "4" >Greedy Best First</option>
+                                <option value= "5" >Bidirectional</option>
+                        </select>
+                    </div><!--
+                    --><div class="header-row-option">
+                        <label for="neighbors-dropdown">Neighbors</label>
+                        <select
+                            id="neighbors-dropdown"
+                            name="neighbors-dropdown"
+                            >
+                                <option value= "Cardinal" >Cardinal Only</option>
+                                <option value= "All" >All</option>
+                        </select>
+                    </div>
+                </section>
+            </header>
+
+            <!-- MAIN CONTENT -->
+            <main id="main-content">
+                <div id="main-content-inner"></div>
+                <div id="terminal">Press "Animate Path" to begin animation.</div>
+                <noscript><p>Please enable JavaScript to load content...</p></noscript>
+            </main>
+        </div>
+    </body>
+</html>

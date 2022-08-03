@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "watch": true,
+        "outDir" : "./dist/js",
+        "rootDir" : "./src/ts"
+    }
+}
